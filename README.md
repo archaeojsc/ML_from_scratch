@@ -12,4 +12,4 @@ more on my own.
 
 * $k$-means and $k$-medoids clustering ([Jupyter
   Notebook](notebooks/00_k_means.ipynb))
-* ISOMap dimesnionality reduction (*coming soon*)
+* ISOMap dimensionality reduction (*coming soon*)
