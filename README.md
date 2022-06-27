@@ -10,4 +10,6 @@ and algorithms from "scratch" (i.e., using minimal or base/common libraries).
 Chack back, as I'll be expanding the list as I have time and as I'm exploring
 more on my own.
 
-* $k$-means and $k$-medoids clustering ([Jupyter Notebook](notebooks/00_k_means.ipynb))
+* $k$-means and $k$-medoids clustering ([Jupyter
+  Notebook](notebooks/00_k_means.ipynb))
+* ISOMap dimesnionality reduction (*coming soon*)
