@@ -7,7 +7,7 @@ always good to have an understanding of what is going on "under the hood".
 
 This repository will be my examples of a variety of machine learning methods
 and algorithms from "scratch" (i.e., using minimal or base/common libraries).
-Chack back, as I'll be expanding the list as I have time and as I'm exploring
+Check back, as I'll be expanding the list as I have time and as I'm exploring
 more on my own.
 
 * $k$-means and $k$-medoids clustering ([Jupyter
