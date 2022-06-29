@@ -25,6 +25,8 @@ def diy_kmeans_initialize(dat, k_clust):
 
 def diy_kmeans_distance(dat, centers):
 
+    d = np.empty((dat.shape[0], centers.shape[1]))
+
     # Find L2 norm (Euclidean distance) from each center
 
     for k in range(centers.shape[0]):
@@ -33,3 +35,5 @@ def diy_kmeans_distance(dat, centers):
     # Return the squared distances
 
     return np.square(d)
+
+# %%
