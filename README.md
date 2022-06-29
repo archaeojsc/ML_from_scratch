@@ -11,5 +11,5 @@ Check back, as I'll be expanding the list as I have time and as I'm exploring
 more on my own.
 
 * $k$-means and $k$-medoids clustering ([Jupyter
-  Notebook](notebooks/00_k_means.ipynb))
+  Notebook](notebooks/00_k_means.ipynb), [code](code/00_k_means.py))
 * ISOMap dimensionality reduction (*coming soon*)
