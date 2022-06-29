@@ -46,4 +46,13 @@ def diy_kmeans_assign(S):
     return c
 
 
+# %% Calculate new centers
+
+def diy_kmeans_update_centers(dat, k_labels):
+
+    new_k_centers = np.array([np.mean(dat[k_labels == k, :], axis=0)
+                             for k in np.unique(k_labels)])
+
+    return new_k_centers
+
 # %%
