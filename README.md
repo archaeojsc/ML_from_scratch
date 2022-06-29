@@ -12,4 +12,5 @@ more on my own.
 
 * $k$-means clustering ([Jupyter Notebook](notebooks/00_k_means.ipynb),
   [code](code/00_k_means.py))
-* ISOMap dimensionality reduction (*coming soon*)
+* ISOMap dimensionality reduction ([Jupyter Notebook](notebooks/01_isomap.ipynb),
+  [code](code/01_isomap.py))
