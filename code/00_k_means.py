@@ -3,6 +3,10 @@
 
 import numpy as np
 
+# For demonstration data sets
+from sklearn.datasets import make_blobs, make_moons, make_circles
+import matplotlib.pyplot as plt
+
 
 # %% Initialize matrix with k centers
 
@@ -124,4 +128,43 @@ def diy_kmeans(dat, n_clusters, max_iter=np.inf):
     return centers, labels
 
 
-# %%
+# %% Isotopic Gaussian clusters
+
+test_blob_data, test_blob_label, test_blob_centers = make_blobs(
+    n_samples=100, n_features=2, centers=3, shuffle=True, return_centers=True)
+
+plt.scatter(test_blob_data[:, 0], test_blob_data[:, 1], c=test_blob_label)
+
+# %% DIY k-means on blobs
+
+my_blob_ctr, my_blob_label = diy_kmeans(dat=test_blob_data, n_clusters=3)
+
+plt.scatter(test_blob_data[:, 0], test_blob_data[:, 1], c=my_blob_label)
+
+
+# %% Concentric circles
+
+test_circ_data, test_circ_label = make_circles(
+    n_samples=100, shuffle=True, noise=0.05, factor=0.4)
+
+plt.scatter(test_circ_data[:, 0], test_circ_data[:, 1], c=test_circ_label)
+
+# %% DIY k-means on Circles
+
+my_circ_ctr, my_circ_label = diy_kmeans(dat=test_circ_data, n_clusters=2)
+
+plt.scatter(test_circ_data[:, 0], test_circ_data[:, 1], c=my_circ_label)
+
+# %% "Two Moons" data set
+
+test_moons_data, test_moons_label = make_moons(
+    n_samples=100, shuffle=True, noise=0.1)
+
+plt.scatter(test_moons_data[:, 0], test_moons_data[:, 1], c=test_moons_label)
+
+
+# %% DIY k-means on Moons
+
+my_moons_ctr, my_moons_label = diy_kmeans(dat=test_moons_data, n_clusters=2)
+
+plt.scatter(test_moons_data[:, 0], test_moons_data[:, 1], c=my_moons_label)
