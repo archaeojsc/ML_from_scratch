@@ -13,4 +13,5 @@ more on my own.
 * Simple $k$-means clustering by Lloyd's algorithm ([Jupyter
   Notebook](notebooks/00_k_means.ipynb), [code](code/00_k_means.py))
 * ISOMap dimensionality reduction (*coming soon*)
-* Random Forest (*coming soon*)
+* Random Forest ([Jupyter Notebook](notebooks/02_random_forest.ipynb),
+  [code](code/02_random_forest.py))
