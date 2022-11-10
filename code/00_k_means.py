@@ -1,4 +1,3 @@
-
 # %% Imports
 
 import numpy as np
@@ -23,10 +22,12 @@ def diy_kmeans_initialize(dat, k_clust):
 
     # Choose k random points from the shuffled matrix
 
-    k_centers = dat_shuffled[np.random.choice(
-        dat_shuffled.shape[0], k_clust, replace=False), :]
+    k_centers = dat_shuffled[
+        np.random.choice(dat_shuffled.shape[0], k_clust, replace=False), :
+    ]
 
     return k_centers
+
 
 # %% Calculate squared distance matrix S
 
@@ -43,6 +44,7 @@ def diy_kmeans_distance(dat, centers):
     # Return the squared distances
 
     return np.square(S)
+
 
 # %% Assign cluster by smallest distance
 
@@ -64,10 +66,12 @@ def diy_kmeans_update_centers(dat, k_labels):
     # For each cluster label, find the mean of data points indexed by label
     # position for that cluster
 
-    new_k_centers = np.array([np.mean(dat[k_labels == k, :], axis=0)
-                             for k in np.unique(k_labels)])
+    new_k_centers = np.array(
+        [np.mean(dat[k_labels == k, :], axis=0) for k in np.unique(k_labels)]
+    )
 
     return new_k_centers
+
 
 # %% Stopping criteria, cluster centers have not moved
 
@@ -79,6 +83,7 @@ def diy_kmeans_converged(old_centers, new_centers):
     converged = np.array_equiv(old_centers, new_centers)
 
     return converged
+
 
 # %% DIY k-means algorithm
 
@@ -119,7 +124,7 @@ def diy_kmeans(dat, n_clusters, max_iter=np.inf):
         converged = diy_kmeans_converged(old_centers, new_centers)
 
     # Convergence notification
-    print('Converged in %s iterations.' % i)
+    print("Converged in %s iterations." % i)
 
     # Create dictionary of labelled cluster centers
     centers = {k: new_centers[k, :] for k in np.unique(C)}
@@ -131,7 +136,8 @@ def diy_kmeans(dat, n_clusters, max_iter=np.inf):
 # %% Isotopic Gaussian clusters
 
 test_blob_data, test_blob_label, test_blob_centers = make_blobs(
-    n_samples=100, n_features=2, centers=3, shuffle=True, return_centers=True)
+    n_samples=100, n_features=2, centers=3, shuffle=True, return_centers=True
+)
 
 plt.scatter(test_blob_data[:, 0], test_blob_data[:, 1], c=test_blob_label)
 
@@ -145,7 +151,8 @@ plt.scatter(test_blob_data[:, 0], test_blob_data[:, 1], c=my_blob_label)
 # %% Concentric circles
 
 test_circ_data, test_circ_label = make_circles(
-    n_samples=100, shuffle=True, noise=0.05, factor=0.4)
+    n_samples=100, shuffle=True, noise=0.05, factor=0.4
+)
 
 plt.scatter(test_circ_data[:, 0], test_circ_data[:, 1], c=test_circ_label)
 
@@ -157,8 +164,7 @@ plt.scatter(test_circ_data[:, 0], test_circ_data[:, 1], c=my_circ_label)
 
 # %% "Two Moons" data set
 
-test_moons_data, test_moons_label = make_moons(
-    n_samples=100, shuffle=True, noise=0.1)
+test_moons_data, test_moons_label = make_moons(n_samples=100, shuffle=True, noise=0.1)
 
 plt.scatter(test_moons_data[:, 0], test_moons_data[:, 1], c=test_moons_label)
 
